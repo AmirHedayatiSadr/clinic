@@ -1,0 +1,332 @@
+@font-face {
+    font-family:IRANSans;
+    src: url("../fonts/eot/IRANSans(FaNum)_Medium.eot");
+    src: url("../fonts/ttf/IRANSansWeb(FaNum).ttf");
+    src: url("../fonts/woff/IRANSansWeb(FaNum).woff");
+    src: url("../fonts/woff2/IRANSansWeb(FaNum).woff2");
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: IRANSans !important;
+    position: relative;
+}
+@media (min-width: 1200px) {
+    /* Start Header */
+    .header {
+        width: 100%;
+        height: 750px;
+        padding-bottom: 600px;
+        background: url("../images/header.jpg") center center no-repeat fixed ;
+        background-size: cover;
+    }
+
+    .list-custom li a{
+        font-size: 19px;
+        color: #6f8b7f !important;
+        padding: 20px;
+    }
+    .login-custom{
+        display: flex;
+
+
+    }
+    .login-custom li{
+        list-style: none;
+        padding: 20px;
+    }
+    .login-custom li a{
+        text-decoration: none;
+        color: #6f8b7f !important;
+    }
+    .web-name h1{
+        text-align: center;
+        margin-top: 50px;
+        padding: 10px;
+        color: #6f8b7f !important;
+    }
+    .web-name h2{
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px;
+        color: #6f8b7f !important;
+    }
+    .img-custom{
+        margin-right: 20px;
+    }
+    .img-custom img{
+        width: 300px;
+        height: 300px;
+        border-radius:50%;
+        border:10px solid #badbcd ;
+
+    }
+    /* End  Header */
+
+    /* Start simpleWork */
+    .txt-custom{
+        text-align: justify;
+        direction: rtl;
+    }
+    /* End simpleWork */
+    .about-custom{
+        width: 100%;
+        background: url("../images/aboutus.png") center center no-repeat fixed;
+        padding-bottom:200px;
+
+
+
+    }
+    .about-custom section{
+        margin : 0 auto ;
+        padding-top: 180px;
+    }
+
+    .footer{
+        width: 100%;
+        background: url("../images/footer.jpg") no-repeat ;
+        background-size: cover;
+        padding-bottom: 100px;
+    }
+
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    /* Start Header */
+    .header {
+        width: 100%;
+        height: 750px;
+        padding-bottom: 600px;
+        background: url("../images/header.jpg") center center no-repeat fixed ;
+        background-size: cover;
+    }
+
+    .list-custom li a{
+        font-size: 15px;
+        color: #6f8b7f !important;
+        padding: 20px;
+    }
+    .login-custom{
+        display: flex;
+
+
+    }
+    .login-custom li{
+        list-style: none;
+        padding: 20px;
+    }
+    .login-custom li a{
+        text-decoration: none;
+        color: #6f8b7f !important;
+    }
+    .web-name h1{
+        text-align: center;
+        margin-top: 50px;
+        padding: 10px;
+        color: #6f8b7f !important;
+    }
+    .web-name h2{
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px;
+        color: #6f8b7f !important;
+    }
+    .img-custom{
+        margin-right: 20px;
+    }
+    .img-custom img{
+        width: 300px;
+        height: 300px;
+        border-radius:50%;
+        border:10px solid #badbcd ;
+
+    }
+    /* End  Header */
+
+    /* Start simpleWork */
+    .txt-custom{
+        text-align: justify;
+        direction: rtl;
+    }
+    /* End simpleWork */
+    .about-custom{
+        width: 100%;
+        background: url("../images/aboutus.png") center center no-repeat fixed;
+        padding-bottom:200px;
+
+
+    }
+    .about-custom section{
+        margin : 0 auto ;
+        padding-top: 180px;
+    }
+    .footer{
+        width: 100%;
+        background: url("../images/footer.jpg") no-repeat ;
+        background-size: cover;
+        padding-bottom: 100px;
+    }
+
+}
+@media (min-width: 768px) and (max-width: 992px){
+    /* Start Header */
+    .header {
+        width: 100%;
+        height: 750px;
+        padding-bottom: 600px;
+        background: url("../images/header.jpg") center center no-repeat fixed ;
+        background-size: cover;
+    }
+
+    .list-custom li a{
+        font-size: 12px;
+        color: #6f8b7f !important;
+        padding: 20px;
+    }
+    .login-custom{
+        display: flex;
+
+
+    }
+    .login-custom li{
+        list-style: none;
+        padding: 20px;
+    }
+    .login-custom li a{
+        text-decoration: none;
+        color: #6f8b7f !important;
+    }
+    .web-name h1{
+        text-align: center;
+        font-size: 26px;
+        margin-top: 50px;
+        padding: 10px;
+        color: #6f8b7f !important;
+    }
+    .web-name h2{
+        text-align: center;
+        font-size: 22px;
+        margin-top: 10px;
+        padding: 10px;
+        color: #6f8b7f !important;
+    }
+    .img-custom{
+        margin-right: 20px;
+    }
+    .img-custom img{
+        width: 300px;
+        height: 300px;
+        border-radius:50%;
+        border:10px solid #badbcd ;
+
+    }
+    /* End  Header */
+
+    /* Start simpleWork */
+    .txt-custom{
+        text-align: justify;
+        direction: rtl;
+        font-size: 13px;
+    }
+    /* End simpleWork */
+    .about-custom{
+        width: 100%;
+        background: url("../images/aboutus.png") center center no-repeat fixed;
+        padding-bottom:200px;
+
+
+    }
+    .about-custom section{
+        margin : 0 auto ;
+        padding-top: 180px;
+    }
+    .footer{
+        width: 100%;
+        background: url("../images/footer.jpg") no-repeat ;
+        background-size: cover;
+        padding-bottom: 100px;
+    }
+
+}
+@media (min-width: 576px) and (max-width: 768px){
+    /* Start Header */
+    .header {
+        width: 100%;
+        height: 750px;
+        padding-bottom: 600px;
+        background: url("../images/header.jpg") center center no-repeat fixed ;
+        background-size: cover;
+    }
+
+    .list-custom li a{
+        font-size: 12px;
+        color: #6f8b7f !important;
+        padding: 20px;
+    }
+    .login-custom{
+        display: flex;
+
+
+    }
+    .login-custom li{
+        list-style: none;
+        padding: 20px;
+    }
+    .login-custom li a{
+        text-decoration: none;
+        color: #6f8b7f !important;
+    }
+    .web-name h1{
+        text-align: center;
+        font-size: 26px;
+        margin-top: 50px;
+        padding: 10px;
+        color: #6f8b7f !important;
+    }
+    .web-name h2{
+        text-align: center;
+        font-size: 22px;
+        margin-top: 10px;
+        padding: 10px;
+        color: #6f8b7f !important;
+    }
+    .img-custom{
+        margin-right: 20px;
+    }
+    .img-custom img{
+        width: 300px;
+        height: 300px;
+        border-radius:50%;
+        border:10px solid #badbcd ;
+
+    }
+    /* End  Header */
+
+    /* Start simpleWork */
+    .txt-custom{
+        text-align: justify;
+        direction: rtl;
+        font-size: 13px;
+    }
+    /* End simpleWork */
+    .about-custom{
+        width: 100%;
+        background: url("../images/aboutus.png") center center no-repeat fixed;
+
+        padding-bottom:200px;
+
+
+    }
+    .about-custom section{
+        margin : 0 auto ;
+        padding-top: 180px;
+    }
+    .footer{
+        width: 100%;
+        background: url("../images/footer.jpg") no-repeat ;
+        background-size: cover;
+        padding-bottom: 100px;
+    }
+}
+
