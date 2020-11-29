@@ -1,4 +1,6 @@
+
 <template>
+
     <section class="container-fluid ml-0 mr-0 ">
         <section class="row pl-0 pr-0">
             <section class="header">
@@ -64,12 +66,17 @@
 
                                 <!-- Modal body -->
                                 <div class="modal-body " style="direction: rtl;">
-                                    <form action="#">
+
+                                    <ul >
+                                        <li class=" error-custom alert alert-danger" v-for="(todo,index) in todos.errors" :key="index[0]">{{todo[0]}}</li>
+                                    </ul>
+                                    <form  @submit.prevent="onSubmit" id="myForm" >
                                         <section class="form-group">
-                                        <input type="text" class="form-control" placeholder="نام و نام خانوادگی">
+                                        <input type="text" class="form-control" placeholder="نام و نام خانوادگی" v-model="fullName">
                                     </section>
                                         <section class="form-group">
-                                            <input type="text" class="form-control" placeholder="شماره همراه">
+                                            <input type="text" class="form-control" placeholder="شماره همراه" v-model="phoneNumber">
+
                                         </section>
                                         <section class="form-group">
                                             <input type="submit" class="btn btn-success" value="درخواست مشاوره">
@@ -183,8 +190,9 @@
 
 </template>
 
-<script>
 
+<script>
+    const Swal = require('sweetalert2');
     export default {
         name: "home",
         props:['app'],
@@ -193,9 +201,41 @@
                 image: './images/woman.png',
                 image1: './images/woman2.png',
                 image2: './images/led.jpg',
+                fullName : '' ,
+                phoneNumber : '' ,
+                errors : '' ,
+                todos: '' ,
             }
         },
         methods:{
+             onSubmit(){
+                 this.errors = [] ;
+                 if(!this.errors.length){
+                     const data = {
+                         phoneNumber: this.phoneNumber ,
+                         fullName : this.fullName ,
+                     }
+                     axios.post('consult',data).then((response)=>{
+                         this.fullName = this.phoneNumber = '' ;
+                         Swal.fire({
+                             title: 'درخواست شما ثبت شد!',
+                             text: 'در اسرع وقت با شما تماس خواهیم گرفت',
+                             icon: 'success',
+                             confirmButtonText: 'بستن',
+
+                         });
+
+
+
+
+                     }).catch(error=>{
+                       this.todos = error.response.data;
+
+                     })
+                 }
+            },
+
+
             changeImage(){
                 var image = document.getElementById('images');
                 if(image.src.match('led')){
@@ -229,4 +269,10 @@
     background-color: #6f8b7f !important;
     color: white ;
 }
+ .error-custom{
+     text-align: right;
+     font-size: 11px;
+     list-style: none;
+
+ }
 </style>

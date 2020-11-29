@@ -3,16 +3,23 @@
         <section class="col-6 offset-3  custom-card ">
            <section class="card text-white bg-dark">
                <section class="card-header text-right">ورود به پنل کاربری</section>
+                <section class="col-6 offset-3">
+                    <ul>
+                        <li class="alert alert-danger text-right text-right" v-for="error in errors" :key="index" >
+                            {{error}}
+                        </li>
+                    </ul>
+                </section>
                <section class="card-body text-right">
-                   <form action="#" class="color-input">
+                   <form action="#" class="color-input" @submit.prevent="onSubmit">
                        <section class="form-group  col-6 offset-3">
-                           <input type="text" class="form-control" placeholder="نام کاربری یا شماره موبایل" >
+                           <input type="text" class="form-control" placeholder="شماره موبایل" v-model="phoneNumber" >
                        </section>
                        <section class="form-group col-6 offset-3">
-                           <input type="password" class="form-control" placeholder="رمزعبور">
+                           <input type="password" class="form-control" placeholder="رمزعبور" v-model="Password">
                        </section>
                        <section class="form-group col-6 offset-3">
-                           <button class="  btn btn-danger" ><a href="#" class="text-decoration-none text-white">ثبت نام</a></button>
+                           <button class="  btn btn-danger" ><router-link to="/register" class="text-decoration-none text-white">ثبت نام</router-link></button>
                            <input type="submit" class="btn btn-success" value="ورود به پنل کاربری">
                        </section>
                    </form>
@@ -24,7 +31,41 @@
 
 <script>
     export default {
-        name: "login"
+        name: "login",
+        props:['app'],
+        data(){
+            return{
+                phoneNumber : '' ,
+                Password : '',
+                errors:[],
+            }
+        },
+        methods:{
+            onSubmit(){
+                this.errors = [] ;
+                if(!this.phoneNumber){
+                    this.errors.push('لطفا شماره موبایلی که با آن ثبت نام کرده اید را وارد کنید')
+                }
+                if (!this.Password){
+                    this.errors.push('رمز عبور خود را وارد کنید')
+                }
+                if (!this.errors.length){
+                    const data = {
+                        phoneNumber : this.phoneNumber ,
+                        Password : this.Password ,
+                    };
+                    axios.post('auth/login',data).then(response=>{
+                       /*axios.get('UserPanel');*/
+                        window.location = response.data.redirect;
+                    }).catch(error => {
+                        this.errors = error.response.data ;
+                    })
+                }
+            }
+        }
+
+
+
     }
 </script>
 
@@ -52,6 +93,12 @@
     ::placeholder{
         color: red;
         text-align: right;
+    }
+    li{
+        list-style: none;
+        color: black;
+        font-size: 14px;
+        text-align: center;
     }
 
 </style>

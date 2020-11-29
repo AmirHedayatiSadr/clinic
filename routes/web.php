@@ -8,6 +8,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::prefix('auth')->group(function (){
-    Route::post('login','AppController@login');
-    Route::post('register','AppController@register');
+    Route::post('register','UserController@register');
+    Route::post('login','UserController@login');
+
 });
+Route::post('consult','UserController@consult');
+Route::get('UserPanel','UserController@UserPanel')->name('UserPanel');
+
